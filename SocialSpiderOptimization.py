@@ -197,14 +197,6 @@ def seat(spider):
             return x
 
 
-# if return true then it is out of bounds [a,b]
-def out_of_bounds(position):
-    for x in range(len(position)):
-        if position[x] < bounds[x, 0] or position[x] > bounds[x, 1]:
-            return True
-    return False
-
-
 def create_population():
     for x in range(population):
         s = np.zeros(n)
@@ -260,7 +252,9 @@ def social_spider_optimization():
                                                       vibrations(spiders[x], best), best.s, a, b, d, rand)
             elif spiders[x].gender == Male:
                 if spiders[x].weight > means:
+
                     near_w = nearest_spider(spiders[x], ["spiders[i].gender == Female"])
+
                     spiders[x].s_next = type_1_male(spiders[x].s, near_w.s, vibrations(spiders[x], near_w), a, d, rand)
                 else:
                     spiders[x].s_next = type_2_male(spiders[x].s, a)
@@ -368,15 +362,15 @@ def test_2():
 def test_3():
     global population, population_male, population_female, y, n, spiders, lim, pf, bounds
     rand = random.random()  # random [0,1]
-    population = 20
+    population = 30
     population_female = int((0.9 - rand * 0.25) * population)
     population_male = population - population_female
     y = "-100*(z[1]-z[0]**2)**2 - (1 - z[0]**2)**2"
     n = 2
-    bounds = np.array([[-15, 15],
-                       [-15, 15]])
-    lim = 500
-    pf = 0.8
+    bounds = np.array([[-10, 10],
+                       [-10, 10]])
+    lim = 200
+    pf = 0.7
 
 
 for test in range(10):
