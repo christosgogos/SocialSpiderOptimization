@@ -1,4 +1,4 @@
 # SocialSpiderOptimization
-A python implementation of Social Spider Optimization. :spider: :spider: :spider: :spider: :cat:
+A python implementation of Social Spider Optimization. :spider: :spider: :spider: :spider: :deer:
 # References
 https://www.sciencedirect.com/science/article/pii/S0957417413003394
