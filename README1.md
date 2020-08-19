@@ -1,2 +1,0 @@
-# SocialSpiderOptimization
-References
